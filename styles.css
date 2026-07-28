@@ -12,7 +12,7 @@
   --green-soft:#E9F2E4;
   --line:      #E1E3D8;
   --max: 1140px;
-  --pad: clamp(20px, 5vw, 56px);
+  --pad: clamp(24px, 5.5vw, 56px);
   --header-h: 70px;
 }
 
@@ -125,9 +125,9 @@ header{
 .text-link:hover, .text-link:focus-visible{ text-decoration:underline; text-underline-offset:4px; }
 
 /* ---------- Hero (home) ---------- */
-.hero{ padding:clamp(64px, 10vh, 120px) 0; }
+.hero{ padding-block:clamp(64px, 10vh, 120px); }
 .hero-grid{
-  display:grid; grid-template-columns: 1.5fr auto; gap:clamp(36px,6vw,80px);
+  display:grid; grid-template-columns: 1.15fr minmax(0, auto); gap:clamp(36px,6vw,80px);
   align-items:center;
 }
 .status{
@@ -146,7 +146,7 @@ header{
 .hero-actions{ margin-top:38px; display:flex; gap:14px; flex-wrap:wrap; }
 .portrait-frame{
   position:relative;
-  width:min(100%, 280px); aspect-ratio:1/1; flex:none;
+  width:clamp(210px, 24vw, 320px); aspect-ratio:1/1; flex:none;
   border-radius:50%; overflow:hidden;
   background:var(--green-soft); border:1px solid var(--line);
 }
@@ -302,7 +302,7 @@ footer{ border-top:1px solid var(--line); background:var(--surface); padding:42p
 .socials a:hover{ color:var(--green-ink); }
 
 /* ---------- Case study pages ---------- */
-.case-hero{ padding:clamp(56px,9vh,100px) 0 clamp(40px,6vh,64px); }
+.case-hero{ padding-block:clamp(56px,9vh,100px) clamp(40px,6vh,64px); }
 .case-hero h1{ font-size:clamp(36px,5.6vw,66px); margin-top:16px; max-width:18ch; }
 .case-hero .intro{ margin-top:24px; max-width:62ch; font-size:clamp(16px,1.7vw,18.5px); color:var(--muted); }
 .case-meta{
@@ -314,7 +314,7 @@ footer{ border-top:1px solid var(--line); background:var(--surface); padding:42p
 .case-meta .v{ font-weight:700; font-size:15px; margin-top:4px; }
 @media (max-width: 720px){ .case-meta{ grid-template-columns:1fr 1fr; } }
 
-.case-body{ padding:clamp(40px,6vh,72px) 0; border-top:none; }
+.case-body{ padding-block:clamp(40px,6vh,72px); border-top:none; }
 .case-section{ margin-bottom:clamp(48px,7vh,80px); }
 .case-section h2{ font-size:clamp(24px,3vw,34px); margin-bottom:18px; }
 .case-section p{ color:var(--muted); max-width:70ch; font-size:16.5px; }
@@ -346,7 +346,7 @@ footer{ border-top:1px solid var(--line); background:var(--surface); padding:42p
 }
 
 /* ---------- Simple message pages (thanks, not found) ---------- */
-.msg{ padding:clamp(80px,14vh,160px) 0; text-align:center; }
+.msg{ padding-block:clamp(80px,14vh,160px); text-align:center; }
 .msg h1{ font-size:clamp(32px,5vw,56px); margin:18px 0 20px; }
 .msg p{ color:var(--muted); max-width:52ch; margin:0 auto 32px; }
 .msg .label{ justify-content:center; }
@@ -367,13 +367,3 @@ html:not(.no-js) .reveal.in{ opacity:1; transform:none; }
   a[href^="http"]::after{ content:" (" attr(href) ")"; font-size:9pt; color:#555; }
   section{ border:none; page-break-inside:avoid; }
 }
-
-/* ---------- Utility pages (404, thanks) ---------- */
-.msg{
-  padding:clamp(80px,16vh,160px) 0;
-  display:flex; flex-direction:column; align-items:flex-start; gap:20px;
-  min-height:52vh;
-}
-.msg h1{ font-size:clamp(34px,5.2vw,58px); max-width:16ch; }
-.msg p{ color:var(--muted); max-width:52ch; font-size:17px; }
-.msg .btn{ margin-top:10px; }
